@@ -1,96 +1,115 @@
+@import url('@fontsource/nunito/400.css');
+@import url('@fontsource/nunito/500.css');
+@import url('@fontsource/nunito/600.css');
+@import url('@fontsource/nunito/700.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Soft, trustworthy children's brand palette */
+    --background: 40 33% 98%;
+    --foreground: 215 50% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 50% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 50% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Sky blue - trust & calmness */
+    --primary: 200 80% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm cream secondary */
+    --secondary: 40 40% 94%;
+    --secondary-foreground: 215 50% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft coral accent */
+    --accent: 15 85% 70%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted tones */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 20% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 25% 90%;
+    --input: 210 25% 90%;
+    --ring: 200 80% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* Custom brand colors */
+    --mint: 160 50% 75%;
+    --lavender: 270 40% 80%;
+    --peach: 25 80% 80%;
+    --sky-light: 200 70% 95%;
+    --coral: 15 85% 70%;
+    --navy: 215 50% 15%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(200 80% 95%) 0%, hsl(40 40% 98%) 50%, hsl(25 80% 95%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 33% 98%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(200 80% 55%) 0%, hsl(200 85% 65%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(215 50% 15% / 0.08);
+    --shadow-card: 0 2px 12px -2px hsl(215 50% 15% / 0.06);
+    --shadow-hover: 0 8px 30px -6px hsl(215 50% 15% / 0.12);
+
+    /* Sidebar (if needed) */
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 215 50% 20%;
+    --sidebar-primary: 200 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 215 50% 20%;
+    --sidebar-border: 210 25% 90%;
+    --sidebar-ring: 200 80% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 215 50% 10%;
+    --foreground: 40 33% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 45% 14%;
+    --card-foreground: 40 33% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 45% 14%;
+    --popover-foreground: 40 33% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 200 75% 60%;
+    --primary-foreground: 215 50% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 40% 20%;
+    --secondary-foreground: 40 33% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 15 75% 65%;
+    --accent-foreground: 215 50% 10%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 215 40% 18%;
+    --muted-foreground: 210 20% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 215 40% 20%;
+    --input: 215 40% 20%;
+    --ring: 200 75% 60%;
+
+    --sidebar-background: 215 50% 10%;
+    --sidebar-foreground: 40 33% 98%;
+    --sidebar-primary: 200 75% 60%;
+    --sidebar-primary-foreground: 215 50% 10%;
+    --sidebar-accent: 215 40% 18%;
+    --sidebar-accent-foreground: 40 33% 98%;
+    --sidebar-border: 215 40% 20%;
+    --sidebar-ring: 200 75% 60%;
   }
 }
 
@@ -99,7 +118,85 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .primary-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .trust-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-light text-primary font-medium text-sm;
+  }
+
+  .category-card {
+    @apply relative overflow-hidden rounded-2xl bg-card shadow-card transition-all duration-300 hover:shadow-hover hover:-translate-y-1;
+  }
+
+  .product-card {
+    @apply bg-card rounded-xl shadow-card overflow-hidden transition-all duration-300 hover:shadow-hover;
+  }
+}
+
+@layer utilities {
+  .bg-sky-light {
+    background-color: hsl(var(--sky-light));
+  }
+
+  .bg-mint {
+    background-color: hsl(var(--mint));
+  }
+
+  .bg-lavender {
+    background-color: hsl(var(--lavender));
+  }
+
+  .bg-peach {
+    background-color: hsl(var(--peach));
+  }
+
+  .text-coral {
+    color: hsl(var(--coral));
+  }
+
+  .text-navy {
+    color: hsl(var(--navy));
+  }
+
+  .bg-coral {
+    background-color: hsl(var(--coral));
   }
 }
