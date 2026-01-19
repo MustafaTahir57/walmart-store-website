@@ -4,6 +4,7 @@ import { Menu, X, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/contexts/CartContext";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -24,10 +25,8 @@ export const Header = () => {
       <div className="container flex h-16 items-center justify-between md:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">LB</span>
-          </div>
-          <span className="text-xl font-bold text-foreground">Little Bloom</span>
+          <img src={logo} alt="SheharyarLLc" className="h-10 w-10 rounded-xl" />
+          <span className="text-xl font-bold text-foreground">SheharyarLLc</span>
         </Link>
 
         {/* Desktop Navigation */}
