@@ -96,7 +96,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>support@littlebloom.com</span>
+                <span>support@sheharyarllc.com</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0" />
