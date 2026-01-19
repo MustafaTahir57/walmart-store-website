@@ -66,6 +66,7 @@ serve(async (req) => {
 
     // Create a one-time payment session (guest checkout)
     const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
       line_items: stripeLineItems,
       mode: "payment",
       success_url: `${origin}/checkout-success`,
