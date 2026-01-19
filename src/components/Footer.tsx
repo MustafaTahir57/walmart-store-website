@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const footerLinks = {
   shop: [
@@ -29,10 +30,8 @@ export const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">LB</span>
-              </div>
-              <span className="text-xl font-bold text-foreground">Little Bloom</span>
+              <img src={logo} alt="SheharyarLLc" className="h-10 w-10 rounded-xl" />
+              <span className="text-xl font-bold text-foreground">SheharyarLLc</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Quality children's clothing designed with comfort, safety, and style in mind. 
@@ -114,7 +113,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Little Bloom LLC. All rights reserved.
+            © {new Date().getFullYear()} SheharyarLLc. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {footerLinks.policies.map((link) => (
