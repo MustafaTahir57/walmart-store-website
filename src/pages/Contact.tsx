@@ -6,33 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
-const contactInfo = [
-  {
-    icon: Mail,
-    title: "Email",
-    details: "support@littlebloom.com",
-    description: "We respond within 24 hours",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    details: "(555) 123-4567",
-    description: "Mon-Fri, 9am-5pm PST",
-  },
-  {
-    icon: MapPin,
-    title: "Address",
-    details: "123 Little Street, Suite 100",
-    description: "Los Angeles, CA 90001",
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    details: "Monday - Friday",
-    description: "9:00 AM - 5:00 PM PST",
-  },
-];
-
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,8 +26,8 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
-              Have questions about our products or your order? We're here to help. 
-              Reach out and we'll get back to you as soon as possible.
+              We're here to help! If you have any questions, concerns, or need assistance 
+              with your order, please contact us using the details below.
             </p>
           </motion.div>
         </div>
@@ -75,39 +48,60 @@ const Contact = () => {
                 <h2 className="mb-4 text-2xl font-bold text-foreground md:text-3xl">
                   Get in Touch
                 </h2>
-                <p className="text-muted-foreground">
-                  Whether you have a question about sizing, need help with an order, 
-                  or just want to say hello, we'd love to hear from you.
-                </p>
               </div>
 
-              <div className="grid gap-6 sm:grid-cols-2">
-                {contactInfo.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="rounded-2xl bg-card p-6 shadow-card"
-                  >
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                      <item.icon className="h-6 w-6 text-primary" />
+              <div className="space-y-6">
+                {/* Business Name */}
+                <div className="rounded-2xl bg-card p-6 shadow-card">
+                  <h3 className="mb-4 text-lg font-semibold text-foreground">Little Bloom LLC</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Mail className="mt-0.5 h-5 w-5 text-primary" />
+                      <div>
+                        <p className="font-medium text-foreground">Email</p>
+                        <p className="text-muted-foreground">support@littlebloom.com</p>
+                      </div>
                     </div>
-                    <h3 className="mb-1 font-semibold text-foreground">{item.title}</h3>
-                    <p className="font-medium text-foreground">{item.details}</p>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                  </motion.div>
-                ))}
-              </div>
 
-              <div className="rounded-2xl bg-primary/5 p-6">
-                <h3 className="mb-2 font-semibold text-foreground">Little Bloom LLC</h3>
-                <p className="text-sm text-muted-foreground">
-                  We are a registered Limited Liability Company committed to providing 
-                  quality children's clothing. All inquiries are handled by our dedicated 
-                  customer service team.
-                </p>
+                    <div className="flex items-start gap-3">
+                      <Phone className="mt-0.5 h-5 w-5 text-primary" />
+                      <div>
+                        <p className="font-medium text-foreground">Phone</p>
+                        <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <MapPin className="mt-0.5 h-5 w-5 text-primary" />
+                      <div>
+                        <p className="font-medium text-foreground">Business Address</p>
+                        <p className="text-muted-foreground">
+                          123 Little Street, Suite 100<br />
+                          Los Angeles, CA 90001<br />
+                          United States
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <Clock className="mt-0.5 h-5 w-5 text-primary" />
+                      <div>
+                        <p className="font-medium text-foreground">Customer Support Hours</p>
+                        <p className="text-muted-foreground">
+                          Monday – Friday: 9:00 AM – 6:00 PM (EST)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl bg-primary/5 p-6">
+                  <p className="text-muted-foreground">
+                    You may also contact us through our website contact form, and we will 
+                    respond within 24 hours.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
