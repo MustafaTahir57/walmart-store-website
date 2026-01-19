@@ -4,14 +4,16 @@ import { motion } from "framer-motion";
 import { ChevronLeft, Truck, RefreshCw, Shield, Ruler, Minus, Plus, ShoppingBag } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getProductById, products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const product = getProductById(id || "");
+  const { addToCart } = useCart();
   
   const [selectedSize, setSelectedSize] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>("");
@@ -33,6 +35,20 @@ const ProductDetail = () => {
       </Layout>
     );
   }
+
+  const handleAddToCart = () => {
+    if (!selectedSize) {
+      toast.error("Please select a size");
+      return;
+    }
+    if (!selectedColor) {
+      toast.error("Please select a color");
+      return;
+    }
+
+    addToCart(product, quantity, selectedSize, selectedColor);
+    toast.success(`${product.name} added to cart!`);
+  };
 
   const relatedProducts = products
     .filter((p) => p.categorySlug === product.categorySlug && p.id !== product.id)
@@ -117,7 +133,7 @@ const ProductDetail = () => {
               {/* Size Selection */}
               <div>
                 <div className="mb-3 flex items-center justify-between">
-                  <label className="text-sm font-medium text-foreground">Size</label>
+                  <label className="text-sm font-medium text-foreground">Size *</label>
                   <button className="inline-flex items-center gap-1 text-sm text-primary hover:underline">
                     <Ruler className="h-4 w-4" />
                     Size Guide
@@ -143,7 +159,7 @@ const ProductDetail = () => {
               {/* Color Selection */}
               <div>
                 <label className="mb-3 block text-sm font-medium text-foreground">
-                  Color: {selectedColor || "Select a color"}
+                  Color: {selectedColor || "Select a color *"}
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {product.colors.map((color) => (
@@ -186,7 +202,7 @@ const ProductDetail = () => {
 
               {/* Add to Cart */}
               <div className="flex gap-4">
-                <Button size="lg" className="flex-1 gap-2">
+                <Button size="lg" className="flex-1 gap-2" onClick={handleAddToCart}>
                   <ShoppingBag className="h-5 w-5" />
                   Add to Cart
                 </Button>

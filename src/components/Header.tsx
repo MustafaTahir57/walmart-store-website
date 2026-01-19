@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -14,6 +15,9 @@ const navLinks = [
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { getTotalItems, setIsCartOpen } = useCart();
+
+  const totalItems = getTotalItems();
 
   return (
     <header className="sticky top-0 z-50 w-full bg-card/95 backdrop-blur-md shadow-soft">
@@ -45,23 +49,45 @@ export const Header = () => {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 md:flex">
-          <Button variant="ghost" size="icon" className="relative">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="relative"
+            onClick={() => setIsCartOpen(true)}
+          >
             <ShoppingBag className="h-5 w-5" />
             <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-xs font-medium text-accent-foreground">
-              0
+              {totalItems}
             </span>
           </Button>
-          <Button>Shop Now</Button>
+          <Button asChild>
+            <Link to="/shop">Shop Now</Link>
+          </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="flex items-center md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Mobile Actions */}
+        <div className="flex items-center gap-2 md:hidden">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="relative"
+            onClick={() => setIsCartOpen(true)}
+          >
+            <ShoppingBag className="h-5 w-5" />
+            {totalItems > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-xs font-medium text-accent-foreground">
+                {totalItems}
+              </span>
+            )}
+          </Button>
+          <button
+            className="flex items-center"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -88,7 +114,7 @@ export const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button className="mt-4 w-full" onClick={() => setIsMenuOpen(false)}>
+              <Button className="mt-4 w-full" asChild onClick={() => setIsMenuOpen(false)}>
                 <Link to="/shop">Shop Now</Link>
               </Button>
             </nav>
