@@ -104,7 +104,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>123 Little Street, Suite 100<br />Los Angeles, CA 90001</span>
+                <span>2810 N Church St<br />PMB 891672<br />Wilmington, Delaware 19802-4447</span>
               </li>
             </ul>
           </div>
@@ -113,7 +113,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} SheharyarLLc. All rights reserved.
+            © 2024 SheharyarLLc. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {footerLinks.policies.map((link) => (
