@@ -77,9 +77,9 @@ const Contact = () => {
                       <div>
                         <p className="font-medium text-foreground">Business Address</p>
                         <p className="text-muted-foreground">
-                          123 Little Street, Suite 100<br />
-                          Los Angeles, CA 90001<br />
-                          United States
+                          2810 N Church St<br />
+                          PMB 891672<br />
+                          Wilmington, Delaware 19802-4447
                         </p>
                       </div>
                     </div>
