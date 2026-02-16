@@ -30,8 +30,8 @@ export const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <img src={logo} alt="SheharyarLLc" className="h-10 w-10 rounded-xl" />
-              <span className="text-xl font-bold text-foreground">SheharyarLLc</span>
+              <img src={logo} alt="SheharyarLLC" className="h-10 w-10 rounded-xl" />
+              <span className="text-xl font-bold text-foreground">SheharyarLLC</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Quality children's clothing designed with comfort, safety, and style in mind. 
@@ -100,7 +100,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>(555) 123-4567</span>
+                <span>+13025573345</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
@@ -113,7 +113,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 SheharyarLLc. All rights reserved.
+            © 2024 SheharyarLLC. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {footerLinks.policies.map((link) => (

@@ -107,7 +107,7 @@ const ShippingPolicy = () => {
                 <h2 className="mb-4 text-2xl font-bold text-foreground">Delivery Issues</h2>
                 <p className="text-muted-foreground">
                   If your package is lost, damaged, or significantly delayed, please contact our customer 
-                  service team at support@littlebloom.com within 14 days of the expected delivery date. 
+                  service team at support@sheharyarllc.com within 14 days of the expected delivery date. 
                   We will work with the carrier to resolve the issue promptly.
                 </p>
               </section>
@@ -124,8 +124,8 @@ const ShippingPolicy = () => {
                 <h2 className="mb-4 text-2xl font-bold text-foreground">Questions?</h2>
                 <p className="text-muted-foreground">
                   If you have any questions about our shipping policy, please contact us at:<br />
-                  Email: support@littlebloom.com<br />
-                  Phone: (555) 123-4567
+                  Email: support@sheharyarllc.com<br />
+                  Phone: +13025573345
                 </p>
               </section>
             </div>

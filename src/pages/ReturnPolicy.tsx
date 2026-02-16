@@ -50,7 +50,7 @@ const ReturnPolicy = () => {
                 <h2 className="mb-4 text-2xl font-bold text-foreground">3. Return Process</h2>
                 <p className="text-muted-foreground">
                   To initiate a return, please contact our customer support team at 
-                  support@littlebloom.com with your order number and reason for return. We will 
+                  support@sheharyarllc.com with your order number and reason for return. We will 
                   provide return instructions within 24 hours.
                 </p>
               </section>

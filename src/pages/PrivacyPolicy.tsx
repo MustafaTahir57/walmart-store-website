@@ -93,7 +93,7 @@ const PrivacyPolicy = () => {
                   <li>Withdraw consent at any time</li>
                 </ul>
                 <p className="mt-4 text-muted-foreground">
-                  To exercise these rights, contact us at support@littlebloom.com.
+                  To exercise these rights, contact us at support@sheharyarllc.com.
                 </p>
               </section>
 
