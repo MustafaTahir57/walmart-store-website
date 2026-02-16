@@ -6,6 +6,7 @@ import { Layout } from "@/components/Layout";
 import { CategoryCard } from "@/components/CategoryCard";
 import { TrustBadge } from "@/components/TrustBadge";
 import { ProductCard } from "@/components/ProductCard";
+import { TestimonialCard } from "@/components/TestimonialCard";
 import { getFeaturedProducts } from "@/data/products";
 
 import heroImage from "@/assets/hero-kids.jpg";
@@ -61,6 +62,37 @@ const trustBadges = [
     icon: Truck,
     title: "Fast Shipping",
     description: "Free standard shipping on orders over $50 with 2-5 business day delivery",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Sarah M.",
+    location: "Austin, TX",
+    rating: 5,
+    review: "The organic cotton onesies are incredibly soft! My baby loves them and I feel good knowing the materials are safe. Already ordered more!",
+    product: "Organic Cotton Onesie Set",
+  },
+  {
+    name: "Jessica R.",
+    location: "Portland, OR",
+    rating: 5,
+    review: "Finally found kids' clothes that survive the playground AND look adorable. The quality is unmatched for the price. Our go-to store now!",
+    product: "Adventure Ready Jogger Set",
+  },
+  {
+    name: "Emily T.",
+    location: "Charlotte, NC",
+    rating: 5,
+    review: "Bought the floral dress for my daughter's birthday and she won't take it off! The fabric is so comfortable and washes beautifully.",
+    product: "Spring Bloom Floral Dress",
+  },
+  {
+    name: "Maria L.",
+    location: "Denver, CO",
+    rating: 4,
+    review: "Love that everything is CPSIA certified. As a first-time mom, knowing these clothes are tested and safe gives me peace of mind.",
+    product: "Newborn Essentials Bundle",
   },
 ];
 
@@ -230,7 +262,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Brand Promise Section */}
+      {/* Testimonials Section */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 text-center"
+          >
+            <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+              What Parents Are Saying
+            </h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              Join hundreds of happy families who trust us for their kids' wardrobe
+            </p>
+          </motion.div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.name}
+                {...testimonial}
+                delay={index * 0.1}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24">
         <div className="container">
           <div className="rounded-3xl bg-primary/5 p-8 md:p-12 lg:p-16">
