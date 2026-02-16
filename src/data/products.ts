@@ -83,27 +83,27 @@ export const products: Product[] = [
     reviewCount: 215,
     soldCount: 1420
   },
-  {
-    id: "kids-canvas-sneakers-1",
-    name: "Canvas Sneakers - Classic Collection",
-    price: 39.99,
-    image: "https://images.unsplash.com/photo-1555274175-75f79b09d5b8?w=600&auto=format",
-    images: [
-      "https://images.unsplash.com/photo-1555274175-75f79b09d5b8?w=600&auto=format"
-    ],
-    category: "Kids Shoes",
-    categorySlug: "shoes",
-    description: "Durable canvas sneakers with non-slip rubber soles. Features padded insoles for all-day comfort and easy-tie laces. Perfect for school and play.",
-    materials: "Upper: Canvas, Sole: Rubber, Insole: Padded EVA foam",
-    safetyInfo: "Non-toxic materials, Non-slip soles, ASTM F963 tested, Arch support design",
-    sizes: ["5", "6", "7", "8", "9", "10", "11", "12", "13", "1", "2", "3"],
-    colors: ["Sky Blue", "Coral Pink", "Navy", "White", "Mint Green"],
-    isNew: true,
-    isFeatured: true,
-    rating: 4.7,
-    reviewCount: 76,
-    soldCount: 530
-  },
+  // {
+  //   id: "kids-canvas-sneakers-1",
+  //   name: "Canvas Sneakers - Classic Collection",
+  //   price: 39.99,
+  //   image: "https://images.unsplash.com/photo-1555274175-75f79b09d5b8?w=600&auto=format",
+  //   images: [
+  //     "https://images.unsplash.com/photo-1555274175-75f79b09d5b8?w=600&auto=format"
+  //   ],
+  //   category: "Kids Shoes",
+  //   categorySlug: "shoes",
+  //   description: "Durable canvas sneakers with non-slip rubber soles. Features padded insoles for all-day comfort and easy-tie laces. Perfect for school and play.",
+  //   materials: "Upper: Canvas, Sole: Rubber, Insole: Padded EVA foam",
+  //   safetyInfo: "Non-toxic materials, Non-slip soles, ASTM F963 tested, Arch support design",
+  //   sizes: ["5", "6", "7", "8", "9", "10", "11", "12", "13", "1", "2", "3"],
+  //   colors: ["Sky Blue", "Coral Pink", "Navy", "White", "Mint Green"],
+  //   isNew: true,
+  //   isFeatured: true,
+  //   rating: 4.7,
+  //   reviewCount: 76,
+  //   soldCount: 530
+  // },
   {
     id: "boys-jogger-set-1",
     name: "Cozy Jogger Set",
