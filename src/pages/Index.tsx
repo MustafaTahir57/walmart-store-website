@@ -256,6 +256,9 @@ const Index = () => {
                 image={product.image}
                 category={product.category}
                 isNew={product.isNew}
+                rating={product.rating}
+                reviewCount={product.reviewCount}
+                soldCount={product.soldCount}
               />
             ))}
           </div>

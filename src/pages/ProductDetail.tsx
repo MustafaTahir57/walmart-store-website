@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ChevronLeft, Truck, RefreshCw, Shield, Ruler, Minus, Plus, ShoppingBag } from "lucide-react";
+import { ChevronLeft, Truck, RefreshCw, Shield, Ruler, Minus, Plus, ShoppingBag, Star } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -125,6 +125,19 @@ const ProductDetail = () => {
                       ${product.originalPrice.toFixed(2)}
                     </span>
                   )}
+                </div>
+                <div className="mt-3 flex items-center gap-3">
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`h-4 w-4 ${i < Math.round(product.rating) ? "fill-primary text-primary" : "text-muted-foreground/30"}`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm font-medium text-foreground">{product.rating}</span>
+                  <span className="text-sm text-muted-foreground">({product.reviewCount} reviews)</span>
+                  <span className="text-sm text-muted-foreground">· {product.soldCount.toLocaleString()}+ sold</span>
                 </div>
               </div>
 
@@ -275,6 +288,9 @@ const ProductDetail = () => {
                   image={product.image}
                   category={product.category}
                   isNew={product.isNew}
+                  rating={product.rating}
+                  reviewCount={product.reviewCount}
+                  soldCount={product.soldCount}
                 />
               ))}
             </div>
