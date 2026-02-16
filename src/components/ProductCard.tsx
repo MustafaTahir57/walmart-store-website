@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
 interface ProductCardProps {
   id: string;
@@ -8,9 +9,12 @@ interface ProductCardProps {
   image: string;
   category: string;
   isNew?: boolean;
+  rating?: number;
+  reviewCount?: number;
+  soldCount?: number;
 }
 
-export const ProductCard = ({ id, name, price, image, category, isNew }: ProductCardProps) => {
+export const ProductCard = ({ id, name, price, image, category, isNew, rating, reviewCount, soldCount }: ProductCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -38,6 +42,18 @@ export const ProductCard = ({ id, name, price, image, category, isNew }: Product
             {category}
           </p>
           <h3 className="mb-2 font-semibold text-foreground line-clamp-1">{name}</h3>
+          {rating !== undefined && (
+            <div className="mb-2 flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                <Star className="h-3.5 w-3.5 fill-primary text-primary" />
+                <span className="text-sm font-medium text-foreground">{rating}</span>
+              </div>
+              <span className="text-xs text-muted-foreground">({reviewCount} reviews)</span>
+              {soldCount !== undefined && soldCount > 0 && (
+                <span className="text-xs text-muted-foreground">· {soldCount.toLocaleString()}+ sold</span>
+              )}
+            </div>
+          )}
           <p className="text-lg font-bold text-primary">${price.toFixed(2)}</p>
         </div>
       </Link>

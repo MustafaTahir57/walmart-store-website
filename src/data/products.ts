@@ -14,6 +14,9 @@ export interface Product {
   colors: string[];
   isNew?: boolean;
   isFeatured?: boolean;
+  rating: number;
+  reviewCount: number;
+  soldCount: number;
 }
 
 export const products: Product[] = [
@@ -34,7 +37,10 @@ export const products: Product[] = [
     sizes: ["2T", "3T", "4T", "5", "6", "7"],
     colors: ["Blue/White", "Navy/White", "Green/White"],
     isNew: true,
-    isFeatured: true
+    isFeatured: true,
+    rating: 4.9,
+    reviewCount: 124,
+    soldCount: 890
   },
   {
     id: "girls-floral-dress-1",
@@ -52,7 +58,10 @@ export const products: Product[] = [
     sizes: ["2T", "3T", "4T", "5", "6", "6X"],
     colors: ["Pink Floral", "Blue Floral", "Yellow Floral"],
     isNew: true,
-    isFeatured: true
+    isFeatured: true,
+    rating: 4.8,
+    reviewCount: 98,
+    soldCount: 650
   },
   {
     id: "baby-onesie-set-1",
@@ -69,7 +78,10 @@ export const products: Product[] = [
     safetyInfo: "CPSIA compliant, Pediatrician recommended, Hypoallergenic, Free from harmful chemicals",
     sizes: ["0-3M", "3-6M", "6-9M", "9-12M", "12-18M"],
     colors: ["White/Mint/Gray", "Pastel Pink Set", "Blue/White/Gray"],
-    isFeatured: true
+    isFeatured: true,
+    rating: 4.9,
+    reviewCount: 215,
+    soldCount: 1420
   },
   {
     id: "kids-canvas-sneakers-1",
@@ -87,7 +99,10 @@ export const products: Product[] = [
     sizes: ["5", "6", "7", "8", "9", "10", "11", "12", "13", "1", "2", "3"],
     colors: ["Sky Blue", "Coral Pink", "Navy", "White", "Mint Green"],
     isNew: true,
-    isFeatured: true
+    isFeatured: true,
+    rating: 4.7,
+    reviewCount: 76,
+    soldCount: 530
   },
   {
     id: "boys-jogger-set-1",
@@ -104,7 +119,10 @@ export const products: Product[] = [
     safetyInfo: "CPSIA compliant, Drawstring meets safety standards, Lead-free dyes",
     sizes: ["3T", "4T", "5", "6", "7", "8"],
     colors: ["Heather Gray", "Navy Blue", "Forest Green"],
-    isFeatured: true
+    isFeatured: true,
+    rating: 4.8,
+    reviewCount: 142,
+    soldCount: 780
   },
   {
     id: "girls-leggings-2pack",
@@ -121,6 +139,9 @@ export const products: Product[] = [
     safetyInfo: "CPSIA compliant, Lead-free, Skin-safe dyes, OEKO-TEX certified",
     sizes: ["2T", "3T", "4T", "5", "6", "6X", "7", "8"],
     colors: ["Black/Navy", "Pink/Purple", "Gray/White"],
+    rating: 4.6,
+    reviewCount: 89,
+    soldCount: 1100
   },
   {
     id: "baby-romper-1",
@@ -137,7 +158,10 @@ export const products: Product[] = [
     safetyInfo: "CPSIA compliant, Nickel-free snaps, Hypoallergenic fabric",
     sizes: ["0-3M", "3-6M", "6-9M", "9-12M", "12-18M", "18-24M"],
     colors: ["Mint", "Peach", "Light Blue", "White"],
-    isNew: true
+    isNew: true,
+    rating: 4.7,
+    reviewCount: 63,
+    soldCount: 410
   },
   {
     id: "kids-sandals-1",
@@ -154,6 +178,9 @@ export const products: Product[] = [
     safetyInfo: "Non-toxic materials, Non-slip soles, Toe protection, ASTM tested",
     sizes: ["5", "6", "7", "8", "9", "10", "11", "12", "13"],
     colors: ["Blue/Green", "Pink/Purple", "Gray/Orange"],
+    rating: 4.5,
+    reviewCount: 54,
+    soldCount: 320
   },
 ];
 
